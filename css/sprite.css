@@ -1,0 +1,210 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-abnormal {
+  background-image: url(../images/sprite.png);
+  background-position: -102px -103px;
+  width: 18px;
+  height: 18px;
+}
+.icon-access {
+  background-image: url(../images/sprite.png);
+  background-position: -24px -129px;
+  width: 18px;
+  height: 17px;
+}
+.icon-back {
+  background-image: url(../images/sprite.png);
+  background-position: -100px -81px;
+  width: 18px;
+  height: 16px;
+}
+.icon-check-green {
+  background-image: url(../images/sprite.png);
+  background-position: -48px -81px;
+  width: 22px;
+  height: 16px;
+}
+.icon-check {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -55px;
+  width: 43px;
+  height: 43px;
+}
+.icon-close {
+  background-image: url(../images/sprite.png);
+  background-position: -29px -103px;
+  width: 21px;
+  height: 21px;
+}
+.icon-code {
+  background-image: url(../images/sprite.png);
+  background-position: -55px 0px;
+  width: 71px;
+  height: 31px;
+}
+.icon-code2 {
+  background-image: url(../images/sprite.png);
+  background-position: -48px -55px;
+  width: 59px;
+  height: 21px;
+}
+.icon-computer {
+  background-image: url(../images/sprite.png);
+  background-position: -47px -129px;
+  width: 18px;
+  height: 16px;
+}
+.icon-exchange {
+  background-image: url(../images/sprite.png);
+  background-position: -105px -36px;
+  width: 19px;
+  height: 14px;
+}
+.icon-explain {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -24px;
+  width: 16px;
+  height: 19px;
+}
+.icon-file {
+  background-image: url(../images/sprite.png);
+  background-position: -131px 0px;
+  width: 21px;
+  height: 29px;
+}
+.icon-flag {
+  background-image: url(../images/sprite.png);
+  background-position: -80px -36px;
+  width: 20px;
+  height: 14px;
+}
+.icon-font-back {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -48px;
+  width: 17px;
+  height: 16px;
+}
+.icon-font {
+  background-image: url(../images/sprite.png);
+  background-position: -125px -103px;
+  width: 18px;
+  height: 18px;
+}
+.icon-global {
+  background-image: url(../images/sprite.png);
+  background-position: -55px -103px;
+  width: 19px;
+  height: 19px;
+}
+.icon-gold {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -129px;
+  width: 19px;
+  height: 17px;
+}
+.icon-hand {
+  background-image: url(../images/sprite.png);
+  background-position: -55px -36px;
+  width: 20px;
+  height: 14px;
+}
+.icon-keyboard {
+  background-image: url(../images/sprite.png);
+  background-position: -93px -129px;
+  width: 20px;
+  height: 12px;
+}
+.icon-laws {
+  background-image: url(../images/sprite.png);
+  background-position: -23px -151px;
+  width: 18px;
+  height: 13px;
+}
+.icon-leaf {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -69px;
+  width: 16px;
+  height: 16px;
+}
+.icon-lock {
+  background-image: url(../images/sprite.png);
+  background-position: -131px -34px;
+  width: 20px;
+  height: 23px;
+}
+.icon-logo {
+  background-image: url(../images/sprite.png);
+  background-position: 0px 0px;
+  width: 50px;
+  height: 50px;
+}
+.icon-remember {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -111px;
+  width: 12px;
+  height: 12px;
+}
+.icon-see {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -151px;
+  width: 18px;
+  height: 13px;
+}
+.icon-server {
+  background-image: url(../images/sprite.png);
+  background-position: -79px -103px;
+  width: 18px;
+  height: 19px;
+}
+.icon-side {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -103px;
+  width: 24px;
+  height: 21px;
+}
+.icon-square {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -90px;
+  width: 16px;
+  height: 16px;
+}
+.icon-teach {
+  background-image: url(../images/sprite.png);
+  background-position: -157px 0px;
+  width: 17px;
+  height: 19px;
+}
+.icon-trade {
+  background-image: url(../images/sprite.png);
+  background-position: -70px -129px;
+  width: 18px;
+  height: 14px;
+}
+.icon-unsee {
+  background-image: url(../images/sprite.png);
+  background-position: -75px -81px;
+  width: 20px;
+  height: 16px;
+}
+.icon-user {
+  background-image: url(../images/sprite.png);
+  background-position: -131px -62px;
+  width: 20px;
+  height: 23px;
+}
