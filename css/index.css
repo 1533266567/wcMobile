@@ -141,7 +141,12 @@ body {
 	-webkit-box-orient: vertical;
 	word-break: break-word
 }
-
+.pb30 {
+	padding-bottom: .66rem;
+}
+.pb35 {
+	margin-bottom: 0.7rem !important;
+}
 
 .app {
 	width: 100%;
@@ -794,7 +799,8 @@ footer > p {
 .guide-list {
 	padding: 0rem .52rem .7rem;
 }
-.guide-list > h3 {
+.guide-list > h3,
+.guide-list > a {
 	display: block;
 	width: 100%;
 	height: .92rem;
@@ -807,7 +813,8 @@ footer > p {
 	position: relative;
 	cursor: pointer;
 }
-.guide-list > h3:after {
+.guide-list > h3:after,
+.guide-list > a:after {
 	position: absolute;
 	content: '';
 	width: 0px;
@@ -817,23 +824,34 @@ footer > p {
 	left: 2.2rem;
 	top: .4rem;
 	-webkit-transition: All 0.4s ease-in-out;
-   	-moz-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
 	transition: All 0.4s ease-in-out;
 }
-.guide-list > h3:first-child {
+.guide-list > h3:first-child  {
 	border-bottom: none;
+}
+.guide-list > h3:first-child::after  {
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid #fff;
+	top: 0.18rem;
 }
 .guide-list > h3.active:after {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-    top: 0.2rem;
+		transform: rotate(180deg);
+		top: .36rem;
+}
+.guide-types {
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	overflow: hidden;
 }
 .guide-types,
 .guide-types li {
-	width: 100;
+	width: 100%;
 }
 .guide-types li > a {
 	width: 100%;
@@ -843,9 +861,9 @@ footer > p {
 	line-height: 0.92rem;
 	color: #d6d6d6;
 	border: 1px solid #878787;
-	border-top: none;
+	border-bottom: none;
 }
-.guide-types li > a.on {
+.guide-types li.on > a {
 	background: #373737;
 }
 .konwlodge-explain,
@@ -853,7 +871,7 @@ footer > p {
 	width: 100%;
 }
 .konwlodge-explain li >h5 {
-	padding: 0.6rem 0.84rem;
+	padding: .56rem 0.84rem;
 	background: #dddddd;
 	color: #000;
 	font-size: 0.32rem;
