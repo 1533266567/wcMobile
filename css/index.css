@@ -909,19 +909,51 @@ footer > p {
 	overflow: hidden;
 	width: 100%;
 }
-.skills-types  li {
+.skills-types >li {
 	width: 100%;
 }
-.skills-types  li > a {
+.skills-types > li > a {
 	width: 100%;
 	display: block;
 	height: 0.92rem;
 	text-align: center;
 	line-height: 0.92rem;
-	color: #d6d6d6;
+	color: #d4d4d4;
 	border: 1px solid #878787;
 	border-bottom: none;
+	position: relative;
+	padding-left: .4rem;
 }
-.skills-types  li.on > a {
+.skills-types > li > a:after{
+	position: absolute;
+	content: '';
+	width: 0px;
+	height: 0px;
+	border: 8px solid transparent;
+	border-top: 8px solid #878787;
+	left: 2.2rem;
+	top: .4rem;
+	-webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+	transition: All 0.4s ease-in-out;
+}
+.skills-types > li > a.active:after{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	top: .24rem;
+}
+.concept-list > span {
+	display: block;
+	font-size: .28rem;
+	color: #8b8b8b;
+	text-align: center;
+	padding: .3rem 0rem;
+	border: 1px solid #4e4e4e;
+	border-bottom: none;
+}
+.concept-list >span.on {
 	background: #373737;
 }

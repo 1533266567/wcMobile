@@ -38,11 +38,36 @@
                 <a href="#">教學指南</a>
                 <h3>實戰技巧</h3>
                 <ul class="skills-types">
-                    <li class="on">
-                        <a href="#">訂單類型</a>
+                    <li>
+                        <a href="javascript:;" class="active">波浪的理論</a>
+                        <div class="concept-list">
+                            <span class="on">波浪的形成</span>
+                            <span>波浪的型態</span>
+                            <span>主浪定律</span>
+                            <span>調整浪的定律原則</span>
+                            <span>神奇的數字</span>
+                            <span>波浪比率及特徵</span>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">盈虧計算</a>
+                        <a href="javascript:;">移動平均線</a>
+                        <div class="concept-list">
+                            <span>波浪的形成</span>
+                            <span>波浪的型態</span>
+                            <span>主浪定律</span>
+                            <span>調整浪的定律原則</span>
+                            <span>神奇的數字</span>
+                            <span>波浪比率及特徵</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;">圖形的表態</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">圖表陰陽燭</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">技術線應用</a>
                     </li>
                 </ul>
             </ul>
@@ -144,17 +169,16 @@
 <script src="../js/jquery-3.0.0.js"></script>
 <script>
     $(function(){
-        // $('.guide-types li').on('click',function() {
-        //     var index = $(this).index();
-        //     $(this).addClass('on').siblings('li').removeClass('on');
-        //     $('article').eq(index).show().siblings('article').hide();
-        // })
+        $('.skills-types li > a').on('click',function() {
+            $(this).toggleClass('active');
+            $(this).parents('li').siblings('li').find('a').removeClass('active');
+            $(this).siblings('.concept-list').slideToggle("1000");
+            $(this).parents('li').siblings('li').find('a').siblings('.concept-list').slideUp("1000");
+        })
 
-        // var height = $('.guide-types').height();
-        // $(".guide-list h3").click(function() {
-        //     $(this).toggleClass("active");
-        //     $(".guide-types").slideToggle("1000");
-        // });
+        $('.concept-list span').on('click',function() {
+            $(this).addClass('on').siblings('span').removeClass('on');
+        })
     })
 </script>
 </body>
