@@ -147,6 +147,10 @@ body {
 .pb35 {
 	margin-bottom: 0.7rem !important;
 }
+.pweight {
+	font-weight: 600;
+	color: #000;
+}
 
 .app {
 	width: 100%;
@@ -833,7 +837,6 @@ footer > p {
 	transition: All 0.4s ease-in-out;
 }
 .guide-list > h3:first-child,
-.skills-list > h3,
 .skills-list > a  {
 	border-bottom: none;
 }
@@ -843,7 +846,8 @@ footer > p {
 	border-bottom: 8px solid #fff;
 	top: 0.18rem;
 }
-.guide-list > h3.active:after {
+.guide-list > h3.active:after,
+.skills-list > h3.active::after {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -o-transform: rotate(180deg);
@@ -899,7 +903,13 @@ footer > p {
 	padding: 0.4rem 1.0rem 0.4rem 0.8rem;
 	line-height: 1.8;
 }
+.explain-text img {
+	width: 100%;
+	display: block;
+	margin: .4rem 0rem;
+}
 .skills-types {
+	margin-top: -1px;
 	border-bottom: 1px solid #878787;
 }
 .skills-types {
