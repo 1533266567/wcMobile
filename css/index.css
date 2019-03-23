@@ -141,6 +141,15 @@ body {
 	-webkit-box-orient: vertical;
 	word-break: break-word
 }
+.pt15 {
+	padding-top: 0.3rem;
+}
+.pb15 {
+	padding-bottom: 0.3rem;
+}
+.pline {
+	border-bottom: 1px solid #dddddd;
+}
 .pb30 {
 	padding-bottom: .66rem;
 }
@@ -151,7 +160,9 @@ body {
 	font-weight: 600;
 	color: #000;
 }
-
+.weight {
+	font-weight: 600;
+}
 .app {
 	width: 100%;
 	position: relative;
@@ -1085,4 +1096,108 @@ footer > p {
 	background: #168237;
 	display: block;
 	text-align: center;
+}
+.item-card {
+	background: #151515;
+	padding: 1.4rem 0rem 0.6rem;
+}
+.item-detail-pic {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 1.0rem;
+}
+.item-card> p {
+	color: #cbcfd3;
+	line-height: 1.8;
+	text-align: center;
+	margin: 0rem 0.9rem 0.6rem;
+}
+.remit-list {
+	width: 100%;
+	background: #fff;
+	padding: 0.56rem 0.52rem;
+}
+.remit-list >li {
+	padding: 0.3rem 0rem;
+	color: #000;
+	font-size: 0.32rem;
+	padding-left: 0.88rem;
+	position: relative;
+	border: 1px solid #a5a5a5;
+	border-bottom: none;
+}
+.remit-list >li:last-child {
+	border-bottom: 1px solid #a5a5a5;
+}
+.remit-list >li::after {
+	position: absolute;
+	content: '';
+	width:0rem;
+	height: 0rem;
+	border: 8px solid transparent;
+	border-top: 8px solid #000;
+	left: 0.4rem;
+	top: 0.46rem;
+	border-radius: 0.07rem;
+	-webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+	transition: All 0.4s ease-in-out;
+}
+.remit-list >li.on::after {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	top: .24rem;
+}
+.download-table {
+	margin: 0rem 0.52rem 0.6rem;
+	border: 1px solid #000;
+	background: #fff;
+}
+.download-table > a {
+	display: block;
+	padding: 0.3rem 0rem;
+	text-align: center;
+	color: #000;
+	font-size: 0.32rem;
+	position: relative;
+}
+.download-table i {
+	display: inline-block;
+	position: absolute;
+	left: 0.3rem;
+	top: 0.2rem;
+}
+.icon-file {
+  background-image: url(../images/sprite.png);
+  background-position: -131px 0px;
+  width: 21px;
+  height: 29px;
+}
+.server-link {
+	margin: 0.6rem 0.5rem;
+	border: 1px solid #fff;
+}
+.server-link> a {
+	display: block;
+	text-align: center;
+	padding: 0.3rem 0rem;
+	color: #fff;
+}
+.icon-broad {
+	background-image: url(../images/trade1.png);
+  width: 0.38rem;
+  height: 0.34rem;
+}
+.icon-terrace {
+	background-image: url(../images/trade2.png);
+  width: 0.38rem;
+  height: 0.4rem;
+}
+.icon-multie {
+	background-image: url(../images/trade3.png);
+  width: 0.38rem;
+  height: 0.38rem;
 }
