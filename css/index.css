@@ -329,11 +329,14 @@ nav.menushow {
 	right:  0.12rem;
 	top: 0.4rem;
 }
+.phone-type::after {
+	top: 0.3rem;
+}
 .code-list {
 	position: relative;
 	border: 1px solid #4a4a4a;
 	z-index: 100;
-	background: #fff;
+	background: #eee;
 	width: 100%;
 }
 .code-list li {
@@ -495,8 +498,10 @@ footer > p {
 .file-input > input {
 	position: absolute;
 	width: 100%;
-	height: 100;
+	height: 100%;
 	opacity: 0;
+	left: 0rem;
+	top: 0rem;
 }
 .user-login {
 	padding-top: 1.08rem;
