@@ -24,6 +24,45 @@
                 <i class="icon-side"></i>
             </div>
         </header>
+        <nav class="side-menu">
+          <h3>歡迎您，尊敬的客戶</h3>
+          <ul class="menu-list">
+            <li>
+              <a href=""><i class="icon-font"></i>登錄客戶中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>登錄管理中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊真實帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊模擬帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>集團首頁</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>關於文傳</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>產品服務</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>文傳學院</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>條則細款</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>下載中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>在線客服</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mask"></div>
         <section class="page-wrap">
             <div class="page-top flex center vertical">
               <i class="left-title-icon"></i>
@@ -678,6 +717,20 @@
             var targetUl =  $('.konwlodge-list article').eq(parentIndex).find('ul').eq(index);
             targetUl.show().siblings('ul').hide();
             
+        })
+
+        $('.top-bar .icon-side').on('click',function() {
+          $(this).hide();
+          $('.icon-close').css('display','block');
+          $('.side-menu').addClass('menushow');
+          $('.mask').show();
+          $('body').addClass('no-scroll')
+        })
+        $('.top-bar .icon-close,.mask').on('click',function() {
+          $('.icon-close,.mask').hide();
+          $('.icon-side').css('display','block');
+          $('.side-menu').removeClass('menushow');
+          $('body').removeClass('no-scroll')
         })
     })
 </script>

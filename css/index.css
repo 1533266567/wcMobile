@@ -49,7 +49,7 @@ ol,li,ul {
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-    color: #e5e5e5;
+    color: #c6c6c6;
 }
 a:focus,input,button,select,textarea,option {
 	outline:none;
@@ -169,6 +169,10 @@ body {
 .app {
 	width: 100%;
 	position: relative;
+	overflow: hidden;
+}
+.no-scroll {
+	overflow: hidden!important;
 }
 header {
 	width: 100%;
@@ -176,10 +180,73 @@ header {
 header .top-bar {
 	width: 100%;
 	background: #c02d36;
-	padding: 0.19rem 0.26rem;
+	padding:  0.4rem 0.5rem;
+	height: 1.2rem;
 }
 header .top-bar > i {
 	display: block;
+	cursor: pointer;
+}
+header .top-bar .none {
+	display: none;
+}
+.side-menu {
+	position: absolute;
+	left: 0rem;
+	top: 1.2rem;
+	width: 5.5rem;
+	z-index: 1000;
+	-webkit-box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+	box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+	-webkit-transform: translate(-5.6rem,0);
+	transform: translate(-5.6rem,0);
+	-webkit-transition: transform .3s;
+    transition: transform .3s;
+    }
+nav.menushow {
+	-webkit-transform: translate(0,0);
+	transform: translate(0,0);
+}
+.side-menu > h3 {
+	width: 100%;
+	background: #282828;
+	color: #ffd2d2;
+	padding: 0.2rem 0rem;
+	text-align: center;
+}
+.side-menu .menu-list {
+	width: 100%;
+	background: #2c2c2c;
+	padding-bottom: 2.0rem;
+}
+.side-menu .menu-list > li {
+	color: #fff;
+	font-size: 0.32rem;
+	padding: 0.2rem 0rem 0.2rem 0.5rem;
+	border-bottom: 1px solid #3a3a3a;
+}
+.side-menu .menu-list a {
+	color: #fff;
+}
+.side-menu .menu-list i {
+	display: inline-block;
+	margin-right: 0.24rem;
+	vertical-align: middle;
+}
+.mask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 999;
+	left: 0rem;
+	top: 1.2rem;
+	display: none;
+}
+.icon-close {
+  background-image: url(../images/sprite.png);
+  background-position: -29px -103px;
+  width: 21px;
+  height: 21px;
 }
 .icon-side {
   background-image: url(../images/sprite.png);
@@ -241,33 +308,69 @@ header .top-bar > i {
 }
 .phone-icon {
 	width: 2.3rem;
-	padding: 0rem 0.5rem 0rem 0.32rem;
 	border-right: 1px solid #4a4a4a;
 }
-.code-list {
+.type-name {
+	width: 100%;
+	text-align: center;
+	padding: 0rem 0.5rem 0rem 0.32rem;
+	color: #c6c6c6;
+	line-height: 0.9rem;
 	position: relative;
 }
-.code-list:after {
+.type-name:after,
+.phone-type::after {
 	position: absolute;
 	content: '';
 	width: 0px;
 	height: 0px;
 	border: 6px solid transparent;
 	border-top: 7px solid #ffffff;
-	right:  -0.34rem;
-	top: 0.36rem;
+	right:  0.12rem;
+	top: 0.4rem;
+}
+.code-list {
+	position: relative;
+	border: 1px solid #4a4a4a;
+	z-index: 100;
+	background: #fff;
+	width: 100%;
 }
 .code-list li {
 	height: 100%;
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
+	padding: 0rem 0.5rem 0rem 0.32rem;
 }
-.code-list li > span {
+.code-list li {
+	color: #202020;
+	padding: 0.12rem 0rem;
+	text-align: center;
+	border-bottom: 1px solid #4a4a4a;
+}
+.code-list li:last-child {
+	border-bottom: none;
+}
+.phone-list {
+	position: relative;
+	border: 1px solid #4a4a4a;
+	z-index: 100;
+	background: #fff;
+	width: 100%;
+}
+.phone-list li {
+	padding: 0.13rem 0.3rem;
+	color: #333;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	position: relative;
+}
+.phone-type {
+	padding: 0.2rem 0.5rem 0.3rem 0.2rem;
 	color: #c6c6c6;
-	margin-left: 0.32rem;
-}
-.account-phone li >span {
-	margin-left: 0.45rem;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	position: relative;
 }
 .input-phone > input {
 	flex: 1;
@@ -394,9 +497,6 @@ footer > p {
 	width: 100%;
 	height: 100;
 	opacity: 0;
-}
-.input-idCard li > span {
-	margin-left: 0rem;
 }
 .user-login {
 	padding-top: 1.08rem;
@@ -600,6 +700,7 @@ footer > p {
 	position: relative;
 	background: #202020;
 	overflow: auto;
+	padding-bottom: 0.8rem;
 }
 .page-top {
 	padding: .8rem 1.2rem .14rem;
@@ -1003,6 +1104,7 @@ footer > p {
 	margin-bottom: 0.14rem;
 	border: 1px solid #fff;
 	text-align: center;
+	cursor: pointer;
 }
 .item-list > li.on {
 	background: #c02d36;
@@ -1089,6 +1191,9 @@ footer > p {
 	line-height: 1.8;
 	margin: 0rem 0.9rem 0.7rem;
 	text-align: center;
+}
+.item-characteristic > img {
+	margin-bottom: 0.44rem;
 }
 .detail-link {
 	margin: 0rem 0.52rem;
@@ -1238,7 +1343,6 @@ footer > p {
 	display: none;
 }
 .explain-table {
-	width: 10rem;
 	text-align: center
 }
 .explain-table th{
@@ -1255,4 +1359,95 @@ footer > p {
 }
 .explain-table tr:nth-child(2n+1) {
 	background: #ddd;
+}
+.icon-back {
+  background-image: url(../images/sprite.png);
+  background-position: -100px -81px;
+  width: 18px;
+  height: 16px;
+}
+.icon-leaf {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -69px;
+  width: 16px;
+  height: 16px;
+}
+.icon-square {
+  background-image: url(../images/sprite.png);
+  background-position: -157px -90px;
+  width: 16px;
+  height: 16px;
+}
+.icon-hand {
+  background-image: url(../images/sprite.png);
+  background-position: -55px -36px;
+  width: 20px;
+  height: 14px;
+}
+.statement-link {
+	margin: 0rem 0.52rem;
+	padding: 0.3rem 0rem;
+	border: 1px solid #fff;
+	text-align: center;
+	display: block;
+}
+.statement-link > a {
+	display: block;
+	color: #fff;
+}
+.download-main {
+	background: #151515;
+}
+.mt4 {
+	padding: 0.84rem 0.8rem 0rem;
+	text-align: center;
+	margin-top: 0.9rem;
+}
+.mt4 > p {
+	color: #f6fbff;
+	line-height: 1.8;
+	padding-top: 0.7rem;
+}
+.download-main .apple {
+	text-align: center;
+	width: 100%;
+	padding-top: 0.7rem;
+}
+.download-main .apple> img,
+.download-main .android > img {
+	display: block;
+	margin: 0 auto 0.4rem;
+}
+.android {
+	padding-top: 0.9rem;
+	padding-bottom: 1.2rem;
+}
+.apple .apple-link,
+.android .android-link {
+	margin: 0rem 0.52rem;
+	border: 1px solid #fff;
+}
+.apple .apple-link > a,
+.android .android-link > a {
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-size: 0.32rem;
+	padding: 0.3rem 0rem;
+}
+.file-download {
+	width: 100%;
+	margin-bottom: 0.16rem;
+	border: 1px solid #000;
+}
+.file-download > a {
+	display: block;
+	padding:  0.18rem 0.3rem;
+	color: #000;
+	font-size: 0.32rem;
+}
+.file-download > a i {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.6rem;
 }

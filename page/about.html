@@ -22,8 +22,48 @@
         <header>
             <div class="top-bar">
                 <i class="icon-side"></i>
+                <i class="icon-close none"></i>
             </div>
         </header>
+        <nav class="side-menu">
+          <h3>歡迎您，尊敬的客戶</h3>
+          <ul class="menu-list">
+            <li>
+              <a href=""><i class="icon-font"></i>登錄客戶中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>登錄管理中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊真實帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊模擬帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>集團首頁</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>關於文傳</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>產品服務</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>文傳學院</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>條則細款</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>下載中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>在線客服</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mask"></div>
         <section class="page-wrap">
             <div class="page-top flex center vertical">
               <i class="left-title-icon"></i>
@@ -38,7 +78,7 @@
                 <li class="on">文傳金業</li>
                 <li>文傳國際</li>
             </ul>
-            <div class="goldenPage">
+            <div class="goldenPage about-page">
                 <h3 class="part-name">文傳金業</h3>
                 <ul class="advantage-list">
                     <li><i class="icon-check-green"></i>公司正規持牌有信用</li>
@@ -78,7 +118,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="international" style="display: none;">
+            <div class="international none about-page">
                 <h3 class="part-name">文傳國際</h3>
                 <ul class="advantage-list">
                     <li><i class="icon-check-green"></i>公司正規持牌有信用</li>
@@ -128,5 +168,30 @@
             <p class="ownership">文傳金融集團版權所有 ©Copy right by WenChuan Co.</p>  
         </footer>
     </div>
+<script src="../js/jquery-3.0.0.js"></script>
+<script>
+    $(function() {
+        $('.about-switch li').on('click',function() {
+            let index = $(this).index();
+            $(this).addClass('on').siblings('li').removeClass('on');
+            $('.about-page').eq(index).show().siblings('.about-page').hide();
+        })
+
+        $('.top-bar .icon-side').on('click',function() {
+          $(this).hide();
+          $('.icon-close').css('display','block');
+          $('.side-menu').addClass('menushow');
+          $('.mask').show();
+          $('body').addClass('no-scroll')
+        })
+
+        $('.top-bar .icon-close,.mask').on('click',function() {
+          $('.icon-close,.mask').hide();
+          $('.icon-side').css('display','block');
+          $('.side-menu').removeClass('menushow');
+          $('body').removeClass('no-scroll')
+        })
+  })
+</script>
 </body>
 </html>

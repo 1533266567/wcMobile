@@ -24,6 +24,45 @@
                 <i class="icon-side"></i>
             </div>
         </header>
+        <nav class="side-menu">
+          <h3>歡迎您，尊敬的客戶</h3>
+          <ul class="menu-list">
+            <li>
+              <a href=""><i class="icon-font"></i>登錄客戶中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>登錄管理中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊真實帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊模擬帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>集團首頁</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>關於文傳</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>產品服務</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>文傳學院</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>條則細款</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>下載中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>在線客服</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mask"></div>
         <section class="page-wrap">
             <div class="page-top flex center vertical">
               <i class="left-title-icon"></i>
@@ -56,7 +95,7 @@
                     <span>產品細則</span>
                 </li>
             </ul>
-            <div class="item-detail none">
+            <div class="item-detail">
                 <div class="item-characteristic">
                     <ul>
                         <li>
@@ -134,7 +173,7 @@
                     <li>匯款資料</li>
                     <li>提取現金</li>
                 </ul>
-                <ul class="konwlodge-explain">
+                <ul class="konwlodge-explain remit-detail">
                     <li>
                         <h5 class="weight"><i class="icon-font-back"></i>使用國際匯款</h5>
                         <div class="explain-text">
@@ -150,7 +189,7 @@
                             <p style="color: #000;">提醒您：以上的收費可能不包括中轉銀行的費用。國際銀行間電匯轉賬，一般而言，國外中間轉賬銀行會自匯款款項中扣取處理費，收款行一般也會另收取匯入匯款手續費，因此收款人實際收到之款項金額，可能與原來之匯款金額不同。</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="none">
                         <h5 class="weight"><i class="icon-font-back"></i>使用本地匯款</h5>
                         <div class="explain-text">
                             <p class="pb30">如您常用的銀行賬戶不是開立在香港，您可以選用當地銀行的國際匯款服務。有些國家或地區對國際匯款有一定的限制，建議您在使用此服務前先向銀行詢問有關細節。請注意，我們不接受通過「西聯匯款」（Western Union）的存款。</p>
@@ -161,7 +200,7 @@
                             <p class="pb30">同行轉賬或支票存入一般都是免費的。跨行轉賬，銀行可能會收取小量的手續費，詳情請向您的銀行查詢。</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="none">
                         <h5 class="weight"><i class="icon-font-back"></i>本地銀行匯款資料</h5>
                         <div class="explain-text">
                             <p class="weight">收款人</p>
@@ -180,7 +219,7 @@
                             <p>［請填上您的交易賬號］</p>
                         </div>
                     </li>
-                    <li style="background: #fff;overflow: hidden;">
+                    <li style="background: #fff;overflow: hidden;" class="none">
                         <h5 class="weight"><i class="icon-font-back"></i>提取您的資金</h5>
                         <div class="explain-text">
                             <p>如您欲提取交易賬戶資金，請下載提款表格後填寫提交即可。</p>
@@ -287,7 +326,7 @@
                 </div>   
             </div>
             
-            <div class="item-detail">
+            <div class="item-detail none">
                 <div class="item-characteristic">
                     <ul>
                         <li>
@@ -773,17 +812,38 @@
 <script src="../js/jquery-3.0.0.js"></script>
 <script>
     $(function(){
-        $('.guide-types li').on('click',function() {
+        var tableLen = $('.explain-table').length;
+        for(var i=0;i<tableLen;i++) {
+            var topLen = $('.explain-table').eq(i).find('th').length;
+            $('.explain-table').eq(i).css('width',topLen*85)
+        }
+
+        $('.item-list li').on('click',function() {
             var index = $(this).index();
             $(this).addClass('on').siblings('li').removeClass('on');
-            $('article').eq(index).show().siblings('article').hide();
+            $('.item-detail').eq(index).show().siblings('.item-detail').hide();
         })
 
-        var height = $('.guide-types').height();
-        $(".guide-list h3").click(function() {
-            $(this).toggleClass("active");
-            $(".guide-types").slideToggle("1000");
-        });
+        $('.remit-list li').on('click',function() {
+            var index = $(this).index();
+            $(this).addClass('on').siblings('li').removeClass('on');
+            $('.remit-detail li').eq(index).show().siblings('li').hide();
+        })
+
+        $('.top-bar .icon-side').on('click',function() {
+          $(this).hide();
+          $('.icon-close').css('display','block');
+          $('.side-menu').addClass('menushow');
+          $('.mask').show();
+          $('body').addClass('no-scroll')
+        })
+        $('.top-bar .icon-close,.mask').on('click',function() {
+          $('.icon-close,.mask').hide();
+          $('.icon-side').css('display','block');
+          $('.side-menu').removeClass('menushow');
+          $('body').removeClass('no-scroll')
+        })
+
     })
 </script>
 </body>

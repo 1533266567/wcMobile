@@ -22,29 +22,73 @@
         <header>
             <div class="top-bar">
                 <i class="icon-side"></i>
+                <i class="icon-close none"></i>
             </div>
         </header>
+        <nav class="side-menu">
+          <h3>歡迎您，尊敬的客戶</h3>
+          <ul class="menu-list">
+            <li>
+              <a href=""><i class="icon-font"></i>登錄客戶中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>登錄管理中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊真實帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>註冊模擬帳戶</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>集團首頁</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>關於文傳</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>產品服務</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>文傳學院</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>條則細款</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>下載中心</a>
+            </li>
+            <li>
+              <a href=""><i class="icon-font"></i>在線客服</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mask"></div>
         <section class="login-wrap">
             <div class="login-top">
                 <i class="icon-logo"></i>
-                <em>註冊模擬帳戶</em>
+                <em>註冊真實帳戶</em>
             </div>
             <form class="login-form">
                 <div class="input-div"><input type="text" name="" placeholder="您的姓名"></div>
                 <div class="input-div"><input type="text" name="" placeholder="輸入正確的郵箱以便接收帳號資料"></div>
                 <div  class="input-phone flex">
-                    <aside class="phone-icon flex">
-                       <ul class="code-list input-idCard">
-                            <li class="flex center">
-                                <span>中國身分證</span>
-                            </li>
+                    <aside class="phone-icon">
+                        <h3 class="type-name">中國身分證</h3>
+                        <ul class="code-list none">
+                            <li>中國身分證</li>
+                            <li> 港台身分證</li>
                        </ul>
                     </aside>
-                    <input type="text" name="" placeholder="請輸入手機號碼">
+                    <input type="text" name="" placeholder="請輸入證件號碼">
                 </div>
                 <div  class="input-phone flex">
-                    <aside class="phone-icon flex">
-                       <ul class="code-list account-phone">
+                    <aside class="phone-icon">
+                        <h3 class="phone-type flex center"> 
+                            <i class="icon-flag"></i>
+                            <span>+86</span>
+                        </h3>
+                       <ul class="phone-list">
                             <li class="flex center">
                                 <i class="icon-flag"></i>
                                 <span>+86</span>
@@ -103,5 +147,23 @@
             <p>文傳國際金融集團版權所有</p>
         </footer>
     </div>
+<script src="../js/jquery-3.0.0.js"></script>
+<script>
+    $(function() {
+        $('.top-bar .icon-side').on('click',function() {
+          $(this).hide();
+          $('.icon-close').css('display','block');
+          $('.side-menu').addClass('menushow');
+          $('.mask').show();
+          $('body').addClass('no-scroll')
+        })
+        $('.top-bar .icon-close,.mask').on('click',function() {
+          $('.icon-close,.mask').hide();
+          $('.icon-side').css('display','block');
+          $('.side-menu').removeClass('menushow');
+          $('body').removeClass('no-scroll')
+        })
+  })
+</script>
 </body>
 </html>
