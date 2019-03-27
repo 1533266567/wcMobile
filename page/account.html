@@ -2,7 +2,7 @@
 <html lang="en">
 <head>   
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>註冊真實帳戶</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport"
           content="maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width,initial-scale=1.0"/>
@@ -28,35 +28,35 @@
         <nav class="side-menu">
           <h3>歡迎您，尊敬的客戶</h3>
           <ul class="menu-list">
-            <li>
-              <a href=""><i class="icon-font"></i>登錄客戶中心</a>
+             <li>
+              <a href="./login.html"><i class="icon-font"></i>登錄客戶中心</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>登錄管理中心</a>
+              <a href="./management.html"><i class="icon-font"></i>登錄管理中心</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>註冊真實帳戶</a>
+              <a href="./account.html"><i class="icon-font"></i>註冊真實帳戶</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>註冊模擬帳戶</a>
+              <a href="./register.html"><i class="icon-font"></i>註冊模擬帳戶</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>集團首頁</a>
+              <a href="../index.html"><i class="icon-font"></i>集團首頁</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>關於文傳</a>
+              <a href="./about.html"><i class="icon-font"></i>關於文傳</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>產品服務</a>
+              <a href="./projectServer.html"><i class="icon-font"></i>產品服務</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>文傳學院</a>
+              <a href="./college.html"><i class="icon-font"></i>文傳學院</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>條則細款</a>
+              <a href="./conditions.html"><i class="icon-font"></i>條則細款</a>
             </li>
             <li>
-              <a href=""><i class="icon-font"></i>下載中心</a>
+              <a href="./download.html"><i class="icon-font"></i>下載中心</a>
             </li>
             <li>
               <a href=""><i class="icon-font"></i>在線客服</a>
@@ -106,27 +106,32 @@
                     </aside>
                 </div>
                 <div class="file-input">
-                    <span>上傳身分證正面照片</span>
-                    <input type="file">
-                    <!-- <img src="../images/banner.png" alt="" class="file-pic"> -->
+                    <h6>上傳身分證正面照片</h6>
+                    <input type="file" capture="camera" accept="image/*" class="upload-btn">
+                     <p class="upload-finish none">上傳完成</p>
+                    <!-- <img src="" alt="" class="file-pic"> -->
                 </div>
                 <div class="file-input">
-                    <span>上傳身分證背面照片</span>
-                    <input type="file">
-                    <!-- <img src="../images/banner.png" alt="" class="file-pic"> -->
+                    <h6>上傳身分證背面照片</h6>
+                    <input type="file" capture="camera" accept="image/*" class="upload-btn">
+                    <p class="upload-finish none">上傳完成</p>
+                    <!-- <img src="" alt="" class="file-pic"> -->
                 </div>
                 <div class="file-input">
-                    <span>上傳銀行卡正面照片</span>
-                    <input type="file">
-                    <!-- <img src="../images/banner.png" alt="" class="file-pic"> -->
+                    <h6>上傳銀行卡正面照片</h6>
+                    <input type="file" capture="camera" accept="image/*" class="upload-btn">
+                    <p class="upload-finish none">上傳完成</p>
+                    <!-- <img src="" alt="" class="file-pic"> -->
                 </div>
                 <div class="file-input">
-                    <span>上傳銀行卡背面照片</span>
-                    <input type="file">
-                    <!-- <img src="../images/banner.png" alt="" class="file-pic"> -->
+                    <h6>上傳銀行卡背面照片</h6>
+                    <input type="file" capture="camera" accept="image/*" class="upload-btn">
+                     <p class="upload-finish none">上傳完成</p>
+                    <!-- <img src="" alt="" class="file-pic"> -->
                 </div>
                 <div class="declare">
                     <label class="declare-box">
+                       <!-- console.log( $('input[type=checkbox]').prop('checked') ) 取值; -->
                         <input type="checkbox" name="">
                         <span class="declare-on"></span>
                     </label>
@@ -148,51 +153,35 @@
         </footer>
     </div>
 <script src="../js/jquery-3.0.0.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/lrz.bundle.js"></script>
 <script>
-    $(function() {
-        $('.top-bar .icon-side').on('click',function() {
-          $(this).hide();
-          $('.icon-close').css('display','block');
-          $('.side-menu').addClass('menushow');
-          $('.mask').show();
-          $('body').addClass('no-scroll')
-        })
+  $(function() {
 
-        $('.top-bar .icon-close,.mask').on('click',function() {
-          $('.icon-close,.mask').hide();
-          $('.icon-side').css('display','block');
-          $('.side-menu').removeClass('menushow');
-          $('body').removeClass('no-scroll')
-        })
+    $('.upload-btn').on('change',function() {
+        var that = $(this);
 
-        $('.type-name').on('click',function() {
-          $('.code-list').toggle();
-        })
+        lrz(this.files[0])
+        .then(function (rst) {
+            // 处理成功会执行
+            console.log(rst); //图片信息
+            that.siblings('h6').hide();
+            that.siblings('.upload-finish').css('display','block');
 
-        $('.code-list li').on('click',function() {
-          var text = $(this).text();
-          $('.type-name').text(text);
-          $('.code-list').hide();
+            //ajax上传写在这里
         })
-
-        $('.phone-type').on('click',function() {
-          $('.phone-list').toggle();
+        .catch(function (err) {
+            // 处理失败会执行
+            alert('上传失败,请重新上传')
         })
-
-        $('.phone-list li').on('click',function() {
-          var text = $(this).children('span').text();
-          var iconClass = $(this).children('i').prop("className");
-          
-          $('.phone-type').children('span').text(text);
-          $('.phone-type').children('i').removeClass().addClass(iconClass);
-          $('.phone-list').hide();
-        })
-
-        $('.declare-box > span').on('click',function() {
-            $(this).toggleClass('declare-on');
-            // console.log( $('input[type=checkbox]').prop('checked') ) 取值;
-        })
+        .always(function () {
+            // 不管是成功失败，都会执行
+        });
+    })
+    
   })
+
+
 </script>
 </body>
 </html>
