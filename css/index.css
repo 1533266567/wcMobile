@@ -502,12 +502,13 @@ nav.menushow {
 	opacity: 0.8;
 }
 footer {
-	padding: 0.88rem 0px;
+	padding: .6rem 0px;
 	background: #0f0f0f;
 	text-align: center;
 	color: #d2d2d2;
 }
 .footer-link {
+	padding-top: .4rem;
 	padding-bottom: 0.4rem;
 }
 .footer-link> a {
@@ -744,7 +745,7 @@ footer > p {
 	padding-bottom: .66rem;
 }
 .home-footer {
-	font-size: 12px;
+	font-size: .24rem;
 	padding-left: .4rem;
 	padding-right: .4rem;
 }
