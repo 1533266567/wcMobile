@@ -98,23 +98,7 @@
         </footer>
     </div>
 <script src="./js/jquery-3.0.0.js"></script>
-<script type="text/javascript">
-  $(function() {
-    $('.top-bar .icon-side').on('click',function() {
-      $(this).hide();
-      $('.icon-close').css('display','block');
-      $('.side-menu').addClass('menushow');
-      $('.mask').show();
-      $('body').addClass('no-scroll')
-    })
-    $('.top-bar .icon-close,.mask').on('click',function() {
-      $('.icon-close,.mask').hide();
-      $('.icon-side').css('display','block');
-      $('.side-menu').removeClass('menushow');
-      $('body').removeClass('no-scroll')
-    })
-
-  })
-</script>
+<script src="./js/fastclick.js"></script>
+<script src="./js/common.js"></script>
 </body>
 </html>

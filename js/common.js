@@ -1,5 +1,7 @@
 
 $(function() {
+  
+  FastClick.attach(document.body);
 
 	$('.top-bar .icon-side').on('click',function() {
       $(this).hide();
