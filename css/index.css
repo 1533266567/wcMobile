@@ -187,6 +187,7 @@ body {
 	overflow: hidden;
 }
 .no-scroll {
+	height: 100%;
 	overflow: hidden!important;
 }
 header {

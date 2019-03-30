@@ -6,14 +6,16 @@ $(function() {
       $('.icon-close').css('display','block');
       $('.side-menu').addClass('menushow');
       $('.mask').show();
-      $('body').addClass('no-scroll')
+      console.log(123123);
+      
+      $('html').addClass('no-scroll')
     })
 
     $('.top-bar .icon-close,.mask').on('click',function() {
       $('.icon-close,.mask').hide();
       $('.icon-side').css('display','block');
       $('.side-menu').removeClass('menushow');
-      $('body').removeClass('no-scroll')
+      $('html').removeClass('no-scroll')
     })
 
     $('.js-see-word').on('click',function() {
