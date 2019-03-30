@@ -89,24 +89,8 @@
                     <span>關於文傳金融集團</span>
                 </a>
             </div>
-            <div class="language none">
-              <ul class="language-list">
-                <li>
-                  <a href="">简体中文</a>
-                </li>
-                <li>
-                  <a href="">繁體中文</a>
-                </li>
-                <li>
-                  <a href="">English</a>
-                </li>
-                <li>
-                  <a href="">Tiếng việt</a>
-                </li>
-              </ul>
-            </div>
+            
         </section>
-       
         <footer class="home-footer">
             <p>風險提示</p>
             <p>差價合約買賣涉及潛在的利潤與損失，若買賣情況不利，損失有可能超過最初保證金的金額。差價合約買賣的價位波動受全球性的多種因素所影響。這些因素許多是難以預計的，差價合約價格的劇烈波動可能導致投資者無法把失利的買賣結算。結算盈虧文傳的職員雖然不斷注意市況，但他們並不能作出任何預測準確性的保證，也不能保證任何損失不超過一定的金額</p>
@@ -114,7 +98,23 @@
         </footer>
     </div>
 <script src="./js/jquery-3.0.0.js"></script>
-<script src="./js/fastclick.js"></script>
-<script src="./js/common.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.top-bar .icon-side').on('click',function() {
+      $(this).hide();
+      $('.icon-close').css('display','block');
+      $('.side-menu').addClass('menushow');
+      $('.mask').show();
+      $('body').addClass('no-scroll')
+    })
+    $('.top-bar .icon-close,.mask').on('click',function() {
+      $('.icon-close,.mask').hide();
+      $('.icon-side').css('display','block');
+      $('.side-menu').removeClass('menushow');
+      $('body').removeClass('no-scroll')
+    })
+
+  })
+</script>
 </body>
 </html>
