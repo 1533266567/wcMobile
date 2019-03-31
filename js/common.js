@@ -3,13 +3,11 @@ $(function() {
   
   FastClick.attach(document.body);
 
-	$('.top-bar .icon-side').on('click',function() {
+	  $('.top-bar .icon-side').on('click',function() {
       $(this).hide();
       $('.icon-close').css('display','block');
       $('.side-menu').addClass('menushow');
       $('.mask').show();
-      console.log(123123);
-      
       $('html').addClass('no-scroll')
     })
 

@@ -187,7 +187,6 @@ body {
 	overflow: hidden;
 }
 .no-scroll {
-	height: 100%;
 	overflow: hidden!important;
 }
 header {
@@ -641,6 +640,7 @@ footer > p {
 	width: 100%;
 	text-align: center;
 	padding-left: .4rem;
+	position: relative;
 }
 .home-num {
 	display: block;
@@ -1544,4 +1544,13 @@ footer > p {
 	text-align: center;
 	display: block;
 	padding:  0.3rem 0rem;
+} 
+.language-btn {
+	position: absolute;
+	width: 1.12rem;
+	height: 1.18rem;
+	right: .96rem;
+	top: 1.04rem;
+	z-index: 10;
+	cursor: pointer;
 }
